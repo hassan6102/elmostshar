@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستشار - المكتبة القانونية | بنها</title>
+    <meta name="description"
+        content="المستشار - سنتر ومكتبة قانونية في بنها، خبرة أكثر من 20 سنة في خدمات طلاب كلية الحقوق">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Arabic -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">المستشار</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#stages">المراحل الدراسيه</a></li>
+                <li><a href="#teachers">اساتذه السنتر</a></li>
+                <li><a href="#promo">العروض</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="booking-btn" onclick="openBookingModal()">
+                    📞 الحجز والتواصل
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="loading">المستشار</h1>
+            <p class="hero-subtitle loading">سنتر ومكتبة قانونية في بنها</p>
+            <p class="hero-subtitle loading">خبرة تتجاوز 20 عاماً في خدمة طلاب كلية الحقوق</p>
+
+            <div class="hero-stats">
+                <div class="stat-item loading">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">سنة خبرة</span>
+                </div>
+                <div class="stat-item loading">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">طالب تخرج</span>
+                </div>
+                <div class="stat-item loading">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">رضا العملاء</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title loading">خدماتنا المتميزة</h2>
+
+            <div class="services-grid">
+                <div class="service-card loading">
+                    <span class="service-icon">🏛</span>
+                    <h3 class="service-title">الكورسات والدورات التدريبية</h3>
+                    <p class="service-description">
+                        يقدم "المستشار" مجموعة من أقوى الكورسات القانونية والتدريب العملي على المهارات القانونية، مع
+                        التركيز على التطبيق الواقعي داخل المجال. لدينا خبرة تتجاوز 20 عاماً في تدريب مئات الطلبة
+                        وتأهيلهم لسوق العمل القانوني، مما يجعلنا اختيارك الأمثل للتأسيس المهني.
+                    </p>
+                </div>
+
+                <div class="service-card loading">
+                    <span class="service-icon">📚</span>
+                    <h3 class="service-title">المحاضرات وشرح المواد</h3>
+                    <p class="service-description">
+                        نشرح كل مواد كلية الحقوق لكل الفرق بطريقة مبسطة ومنظمة، وبأسلوب يفهمه الطالب بسهولة. المحاضرات
+                        يتم إعدادها بواسطة مدرسين ذوي خبرة طويلة تتجاوز 20 سنة، وعلى دراية كاملة بنظام الكلية
+                        والامتحانات.
+                    </p>
+                </div>
+
+                <div class="service-card loading">
+                    <span class="service-icon">📝</span>
+                    <h3 class="service-title">المذكرات والتلخيصات</h3>
+                    <p class="service-description">
+                        بنوفر تلخيصات قوية ومذكرات شاملة ومركزة لكل مادة، بتساعدك تذاكر بسرعة وتفهم بسهولة وتحقق أعلى
+                        الدرجات. خبرتنا اللي تعدت 20 سنة ساعدتنا نعرف إزاي نختصر المادة بشكل ذكي ومفيد.
+                    </p>
+                </div>
+
+                <div class="service-card loading">
+                    <span class="service-icon">💳</span>
+                    <h3 class="service-title">دفع المصاريف والخدمات الطلابية</h3>
+                    <p class="service-description">
+                        بنوفر لك كل خدماتك في مكان واحد: دفع مصاريف الجامعة، تقديم الأوراق، وطلب الخدمات القانونية اللي
+                        تخصك كطالب. "المستشار" بيخدم طلاب حقوق بنها من أكتر من 20 سنة، وعارفين كويس احتياجاتك وهنلبيها
+                        بأسرع وقت.
+                    </p>
+                </div>
+
+                <div class="service-card loading">
+                    <span class="service-icon">🚚</span>
+                    <h3 class="service-title">خدمة التوصيل وخدمة العملاء</h3>
+                    <p class="service-description">
+                        لأن راحتك تهمنا، وفرنا خدمة توصيل لكل المذكرات والتلخيصات لأي مكان داخل أو خارج بنها. كل اللي
+                        عليك إنك تطلب المذكرة أو الخدمة من خلال موقع "المستشار"، وفريقنا هيتواصل معاك فورًا لتأكيد الطلب
+                        وتوصيله بأسرع وقت. بنقدّم لك خدمة احترافية وسريعة ضمن منظومة شغالة بقلب وضمير بقالها أكتر من 20
+                        سنة في خدمة طلاب كلية الحقوق.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Stages Section -->
+    <section class="stages" id="stages">
+        <div class="container">
+            <h2 class="section-title loading">المراحل الدراسية</h2>
+            <p class="section-subtitle loading">اختر سنتك الدراسية لمعرفة المواد والخدمات المتاحة</p>
+
+            <div class="stages-grid">
+
+
+                <button class="deblom" onclick="window.location.href='allyear.html'">التعليم العادى</button>
+
+                <button class="deblom" onclick="window.location.href='termD.html'">الدبلومات</button>
+                <button class="deblom" onclick="window.location.href='allyear.html'">شعبه اللغه الانجليزيه</button>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Teachers Section -->
+    <section class="teachers" id="teachers">
+        <div class="container">
+            <h2 class="section-title loading">أساتذة السنتر</h2>
+            <p class="section-subtitle loading">نخبة من أفضل الأساتذة والمتخصصين في القانون</p>
+
+            <div class="teachers-grid">
+                <div class="teacher-card loading">
+                    <div class="teacher-image">
+                        <span class="teacher-avatar">👨‍🏫</span>
+                    </div>
+                    <h3 class="teacher-name">د. أحمد محمد علي</h3>
+                    <p class="teacher-title">أستاذ القانون المدني</p>
+                    <p class="teacher-description">خبرة 25 سنة في تدريس القانون المدني والعقود</p>
+                </div>
+
+                <div class="teacher-card loading">
+                    <div class="teacher-image">
+                        <span class="teacher-avatar">👨‍💼</span>
+                    </div>
+                    <h3 class="teacher-name">د. محمود حسن إبراهيم</h3>
+                    <p class="teacher-title">أستاذ القانون الجنائي</p>
+                    <p class="teacher-description">متخصص في القانون الجنائي والإجراءات الجنائية</p>
+                </div>
+
+                <div class="teacher-card loading">
+                    <div class="teacher-image">
+                        <span class="teacher-avatar">👩‍🏫</span>
+                    </div>
+                    <h3 class="teacher-name">د. فاطمة أحمد السيد</h3>
+                    <p class="teacher-title">أستاذة قانون الأحوال الشخصية</p>
+                    <p class="teacher-description">خبيرة في قانون الأسرة والأحوال الشخصية</p>
+                </div>
+
+                <div class="teacher-card loading">
+                    <div class="teacher-image">
+                        <span class="teacher-avatar">👨‍⚖️</span>
+                    </div>
+                    <h3 class="teacher-name">أ. خالد عبد الرحمن</h3>
+                    <p class="teacher-title">أستاذ القانون التجاري</p>
+                    <p class="teacher-description">محامي وأستاذ متخصص في القانون التجاري والشركات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Promo Section -->
+    <section class="promo" id="promo">
+        <div class="container">
+            <div class="promo-content">
+                <h2 class="loading">🎁 عرض خاص لطلابنا</h2>
+                <p class="loading">استخدم كود الخصم للحصول على خصم خاص على جميع خدماتنا</p>
+                <div class="promo-code loading">ELMOSTASHAR</div>
+                <p class="loading">اذكر الكود عند الدفع واحصل على خصم مميز!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <h3>تواصل معنا</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>بنها - مصر</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>011257741855</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>يومياً من 9 صباحاً - 9 مساءً</span>
+                </div>
+            </div>
+            <button class="booking-btn" onclick="openBookingModal()" style="margin: 1rem 0;">
+                📱 الحجز والتواصل
+            </button>
+            <div class="copyright">
+                <p>&copy; 2024 المستشار - المكتبة القانونية. جميع الحقوق محفوظة.</p>
+                <p>خبرة تتجاوز 20 عاماً في خدمة طلاب كلية الحقوق</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Booking Button for Mobile -->
+    <div class="fixed-booking">
+        <button class="booking-btn" onclick="openBookingModal()">
+            📞 الحجز والتواصل
+        </button>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>طرق التواصل</h2>
+
+            <div class="contact-options">
+                <div class="contact-option" onclick="callDirect()">
+                    <span>📞</span>
+                    <div>اتصال مباشر</div>
+                </div>
+                <div class="contact-option" onclick="openWhatsApp()">
+                    <span>💬</span>
+                    <div>واتساب</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

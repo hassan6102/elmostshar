@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السنة الأولى - المستشار المكتبة القانونية</title>
+    <meta name="description" content="مواد ومحاضرات السنة الأولى - كلية الحقوق - المستشار">
+    
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #F4E4BC;
+            --dark-gold: #B8860B;
+            --text-dark: #2C2C2C;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --light-bg: #FEFCF3;
+            --shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+            --shadow-hover: 0 8px 30px rgba(212, 175, 55, 0.25);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.1s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo::before {
+            content: "⚖️";
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark) !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.1s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--light-bg) !important;
+            color: var(--primary-gold) !important;
+        }
+
+        .booking-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .booking-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--light-bg), var(--secondary-gold));
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-family: 'Amiri', serif;
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--dark-gold));
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border-right: 4px solid var(--primary-gold);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .subject-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.1s ease;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .subject-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .subject-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .center-info {
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .center-info h3 {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .center-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.1s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+
+        .faq-question.active {
+            background: var(--secondary-gold);
+            color: var(--dark-gold);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.1s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.1s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Offers Section */
+        .offers {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--white);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .offer-card {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--dark-gold));
+        }
+
+        .offer-badge {
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .offer-title {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .offer-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .offer-btn {
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .offer-btn:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 0 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer h3 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .subjects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .subject-card {
+                padding: 1.5rem;
+            }
+
+            .center-info {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-gold);
+                flex-direction: column;
+                padding: 2rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.1s ease;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 40px 0;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .subject-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .center-info {
+                padding: 2rem 1rem;
+            }
+
+            .faq-question {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 1rem 1rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1001;
+            border-radius: 10px;
+            overflow: hidden;
+            top: 100%;
+            right: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-item {
+            position: relative;
+        }
+
+        .dropdown-item > a {
+            color: var(--text-dark) !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.1s;
+            border-radius: 0 !important;
+            background: none !important;
+            transform: none !important;
+        }
+
+        .dropdown-item > a:hover {
+            background-color: var(--light-bg) !important;
+            color: var(--primary-gold) !important;
+        }
+
+        .sub-dropdown {
+            position: relative;
+        }
+
+        .sub-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            background-color: var(--white);
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .sub-dropdown:hover .sub-dropdown-content {
+            display: block;
+        }
+
+        .sub-dropdown-content a {
+            color: var(--text-dark) !important;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.1s;
+            font-size: 0.9rem;
+        }
+
+        .sub-dropdown-content a:hover {
+            background-color: var(--secondary-gold) !important;
+            color: var(--dark-gold) !important;
+        }
+
+        .sub-dropdown-content a.under-construction {
+            color: var(--text-light) !important;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .sub-dropdown-content a.under-construction:hover {
+            background-color: #f5f5f5 !important;
+            color: var(--text-light) !important;
+        }
+
+        .dropdown-arrow {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">المستشار</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html#services">خدماتنا</a></li>
+
+                <li><a href="index.html#contact">تواصل معنا</a></li>
+            </ul>
+            <a href="tel:011257741855" class="booking-btn">
+                📞 الحجز والتواصل
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title"> دبلومه القانون الدولى العام</h1>
+                <p class="page-subtitle">مرحباً بك في كلية الحقوق - بداية رحلتك القانونية</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <a href="index.html#stages" class="back-btn">
+                ← العودة للمراحل الدراسية
+            </a>
+
+            <!-- Introduction Section -->
+            <section class="section">
+                <h2 class="section-title">مرحباً بك في كلية الحقوق</h2>
+                <div class="intro-text">
+                    <p>أهلاً وسهلاً بك في كلية الحقوق، حيث تبدأ رحلتك في عالم القانون والعدالة. السنة الأولى هي حجر الأساس في تكوينك القانوني، حيث ستتعلم المبادئ الأساسية للقانون والنظم القانونية المختلفة.</p>
+                    <p>في هذه السنة، ستكتسب فهماً عميقاً للمفاهيم القانونية الأساسية التي ستبني عليها معرفتك في السنوات القادمة. نحن في "المستشار" نساعدك على فهم هذه المواد بطريقة مبسطة وعملية.</p>
+                </div>
+            </section>
+
+            <!-- Subjects Section -->
+            <section class="section">
+                <h2 class="section-title">مواد السنة الأولى</h2>
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <h3 class="subject-title">مدخل إلى علم القانون</h3>
+                        <p class="subject-description">
+                            تعريف القانون وخصائصه، مصادر القانون، تطبيق القانون من حيث الزمان والمكان، تفسير القانون والنظرية العامة للحق.
+                        </p>
+                    </div>
+
+                    <div class="subject-card">
+                        <h3 class="subject-title">تاريخ القانون</h3>
+                        <p class="subject-description">
+                            دراسة تطور النظم القانونية عبر التاريخ، القانون في الحضارات القديمة، تطور القانون المصري والعربي.
+                        </p>
+                    </div>
+
+                    <div class="subject-card">
+                        <h3 class="subject-title">القانون الدستوري</h3>
+                        <p class="subject-description">
+                            النظرية العامة للدولة، أشكال الحكم، الدستور وأنواعه، السلطات العامة في الدولة، الحقوق والحريات العامة.
+                        </p>
+                    </div>
+
+                    <div class="subject-card">
+                        <h3 class="subject-title">الاقتصاد السياسي</h3>
+                        <p class="subject-description">
+                            المبادئ الأساسية للاقتصاد، النظم الاقتصادية المختلفة، دور الدولة في النشاط الاقتصادي، التنمية الاقتصادية.
+                        </p>
+                    </div>
+
+                    <div class="subject-card">
+                        <h3 class="subject-title">علم الاجتماع القانوني</h3>
+                        <p class="subject-description">
+                            العلاقة بين القانون والمجتمع، الضبط الاجتماعي، التغير الاجتماعي وأثره على القانون، علم الإجرام.
+                        </p>
+                    </div>
+
+                    <div class="subject-card">
+                        <h3 class="subject-title">اللغة الإنجليزية القانونية</h3>
+                        <p class="subject-description">
+                            المصطلحات القانونية باللغة الإنجليزية، قراءة النصوص القانونية، الترجمة القانونية، المراسلات القانونية.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Center Info Section -->
+            <section class="section">
+                <div class="center-info">
+                    <h3>مركز المستشار - مكتبتك القانونية</h3>
+                    <p>نحن في "المستشار" نفخر بخدمة طلاب كلية الحقوق منذ أكثر من 20 عاماً. نقدم لك أفضل الخدمات التعليمية والمكتبية لضمان تفوقك الأكاديمي.</p>
+                    <p><strong>🎁 عرض خاص للطلاب الجدد:</strong> نقدم محاضرات مجانية تمهيدية لمواد السنة الأولى لمساعدتك على البداية الصحيحة في رحلتك القانونية.</p>
+                    <p>مكتبتنا تحتوي على أحدث المراجع والكتب القانونية، ومذكراتنا المبسطة ستساعدك على فهم المواد بسهولة وتحقيق أعلى الدرجات.</p>
+                    <p><strong>خدماتنا تشمل:</strong> المحاضرات التفصيلية، المذكرات المبسطة، التلخيصات المركزة، خدمة التوصيل، والاستشارات الأكاديمية.</p>
+                </div>
+            </section>
+
+
+            <!-- FAQ Section -->
+            <section class="faq section">
+                <div class="container">
+                    <h2 class="section-title">الأسئلة الشائعة</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>ما هي أهم المواد في السنة الأولى؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    أهم المواد في السنة الأولى هي مدخل إلى علم القانون والقانون الدستوري، حيث تشكل الأساس لفهم باقي المواد القانونية في السنوات التالية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>كيف يمكنني التفوق في مواد السنة الأولى؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    للتفوق في السنة الأولى، ننصح بالحضور المنتظم للمحاضرات، استخدام المذكرات المبسطة، والمراجعة المستمرة. كما نقدم في المستشار محاضرات تقوية مجانية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>هل تتوفر مذكرات مبسطة لجميع المواد؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    نعم، نوفر في المستشار مذكرات مبسطة وشاملة لجميع مواد السنة الأولى، مع التلخيصات المركزة والأمثلة العملية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>متى تبدأ المحاضرات المجانية؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    المحاضرات المجانية تبدأ مع بداية كل فصل دراسي. يمكنك التواصل معنا للحصول على الجدول الزمني المحدث.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq section">
+                <div class="container">
+                    <h2 class="section-title">الأسئلة الشائعة عن المستشار</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>ما هي أهم المواد في السنة الأولى؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    أهم المواد في السنة الأولى هي مدخل إلى علم القانون والقانون الدستوري، حيث تشكل الأساس لفهم باقي المواد القانونية في السنوات التالية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>كيف يمكنني التفوق في مواد السنة الأولى؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    للتفوق في السنة الأولى، ننصح بالحضور المنتظم للمحاضرات، استخدام المذكرات المبسطة، والمراجعة المستمرة. كما نقدم في المستشار محاضرات تقوية مجانية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>هل تتوفر مذكرات مبسطة لجميع المواد؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    نعم، نوفر في المستشار مذكرات مبسطة وشاملة لجميع مواد السنة الأولى، مع التلخيصات المركزة والأمثلة العملية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>متى تبدأ المحاضرات المجانية؟</span>
+                                <span class="faq-icon">▼</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    المحاضرات المجانية تبدأ مع بداية كل فصل دراسي. يمكنك التواصل معنا للحصول على الجدول الزمني المحدث.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Offers Section -->
+            <section class="offers section">
+                <div class="container">
+                    <h2 class="section-title" style="color: white;">عروض السنة الأولى</h2>
+                    <div class="offers-grid">
+                        <div class="offer-card">
+                            <div class="offer-badge">عرض خاص</div>
+                            <h3 class="offer-title">باقة البداية الذهبية</h3>
+                            <p class="offer-description">
+                                مذكرات جميع مواد السنة الأولى + محاضرات مجانية + متابعة شخصية
+                            </p>
+                            <div class="offer-price">299 جنيه</div>
+                            <a href="tel:011257741855" class="offer-btn">احجز الآن</a>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-badge">الأكثر طلباً</div>
+                            <h3 class="offer-title">باقة التفوق الشاملة</h3>
+                            <p class="offer-description">
+                                جميع المذكرات + المحاضرات + التلخيصات + نماذج امتحانات + خدمة التوصيل
+                            </p>
+                            <div class="offer-price">449 جنيه</div>
+                            <a href="tel:011257741855" class="offer-btn">احجز الآن</a>
+                        </div>
+
+                        <div class="offer-card">
+                            <div class="offer-badge">محدود</div>
+                            <h3 class="offer-title">باقة المتابعة الفردية</h3>
+                            <p class="offer-description">
+                                جميع خدمات الباقة الشاملة + متابعة فردية مع الأساتذة + استشارات أكاديمية
+                            </p>
+                            <div class="offer-price">599 جنيه</div>
+                            <a href="tel:011257741855" class="offer-btn">احجز الآن</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>تواصل معنا</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>بنها - مصر</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>011257741855</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>يومياً من 9 صباحاً - 9 مساءً</span>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 المستشار - المكتبة القانونية. جميع الحقوق محفوظة.</p>
+                <p>خبرة تتجاوز 20 عاماً في خدمة طلاب كلية الحقوق</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for FAQ Accordion -->
+    <script>
+        // FAQ Accordion functionality
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = button.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.parentElement.querySelector('.faq-answer').classList.remove('active');
+            });
+            
+            // If this item wasn't active, open it
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        function toggleDropdown(event, element) {
+            event.preventDefault();
+        }
+
+        function toggleSubDropdown(event, element) {
+            event.preventDefault();
+        }
+
+        function showUnderConstruction(event) {
+            event.preventDefault();
+            alert('هذا القسم تحت الإنشاء - سيتم إضافته قريباً');
+        }
+    </script>
+</body>
+</html>
