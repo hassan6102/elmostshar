@@ -413,6 +413,102 @@
             background: var(--dark-gold);
             transform: translateY(-2px);
         }
+        :root {
+  --white: #ffffff;
+  --primary-gold: #d4af37;
+  --secondary-gold: #f7e7b3;
+  --dark-gold: #b8860b;
+  --light-bg: #f9f9f9;
+  --text-dark: #333333;
+}
+
+/* Fixed Booking Button */
+.fixed-booking {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.booking-btn {
+  background: var(--primary-gold);
+  color: var(--white);
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.booking-btn:hover {
+  background: var(--dark-gold);
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: var(--primary-gold);
+}
+
+.contact-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--secondary-gold);
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-option:hover {
+  transform: scale(1.1);
+  background: var(--primary-gold);
+  color: var(--white);
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 
         /* Footer */
         .footer {
@@ -649,9 +745,31 @@
 
                 <li><a href="index.html#contact">تواصل معنا</a></li>
             </ul>
-            <a href="tel:011257741855" class="booking-btn">
-                📞 الحجز والتواصل
-            </a>
+            <!-- Fixed Booking Button for Mobile -->
+            <div class="fixed-booking">
+                <button class="booking-btn" onclick="openBookingModal()">
+                    📞 الحجز والتواصل
+                </button>
+            </div>
+
+            <!-- Booking Modal -->
+            <div id="bookingModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeBookingModal()">&times;</span>
+                    <h2>طرق التواصل</h2>
+
+                    <div class="contact-options">
+                        <div class="contact-option" onclick="callDirect()">
+                            <span>📞</span>
+                            <div>اتصال مباشر</div>
+                        </div>
+                        <div class="contact-option" onclick="openWhatsApp()">
+                            <span>💬</span>
+                            <div>واتساب</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -1101,6 +1219,41 @@
             event.preventDefault();
             alert('هذا القسم تحت الإنشاء - سيتم إضافته قريباً');
         }
+        // Booking Modal Functions
+function openBookingModal() {
+    document.getElementById('bookingModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeBookingModal() {
+    document.getElementById('bookingModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function callDirect() {
+    window.location.href = 'tel:011257741855';
+}
+
+function openWhatsApp() {
+    const message = encodeURIComponent('السلام عليكم، أريد الاستفسار عن خدمات المستشار');
+    window.open(`https://wa.me/2011257741855?text=${message}`, '_blank');
+}
+
+// Close modal when clicking outside
+window.onclick = function (event) {
+    const modal = document.getElementById('bookingModal');
+    if (event.target === modal) {
+        closeBookingModal();
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        closeBookingModal();
+    }
+});
+
     </script>
 </body>
 
