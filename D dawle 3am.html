@@ -636,21 +636,314 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">المستشار</a>
             <ul class="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="index.html#services">خدماتنا</a></li>
-
                 <li><a href="index.html#contact">تواصل معنا</a></li>
             </ul>
-            <a href="tel:011257741855" class="booking-btn">
-                📞 الحجز والتواصل
-            </a>
+            <!-- زرار الحجز -->
+            <div class="fixed-booking">
+                <button class="booking-btn" onclick="openBookingModal()">
+                    📞 الحجز والتواصل
+                </button>
+            </div>
+
+            <!-- المودال -->
+            <!-- Fixed Booking Button for Mobile -->
+            <div class="fixed-booking">
+                <button class="booking-btn" onclick="openBookingModal()">
+                    📞 الحجز والتواصل
+                </button>
+            </div>
+
+            <!-- Booking Modal -->
+            <div id="bookingModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeBookingModal()">&times;</span>
+                    <h2>طرق التواصل</h2>
+
+                    <div class="contact-options">
+                        <div class="contact-option" onclick="callDirect()">
+                            <span>📞</span>
+                            <div>اتصال مباشر</div>
+                        </div>
+                        <div class="contact-option" onclick="openWhatsApp()">
+                            <span>💬</span>
+                            <div>واتساب</div>
+                        </div>
+                        <div class="contact-option" onclick="openWhatsAppgrop()">
+                            <span>💬</span>
+                            <div>جروب الواتساب</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* زرار ثابت تحت */
+                /* Loading animation */
+                .loading {
+                    opacity: 0;
+                    transform: translateY(40px);
+                    transition: all 0.6s ease-out;
+                }
+
+                .loading.loaded {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                /* Booking Button Styles */
+                .booking-btn {
+                    background: linear-gradient(135deg, #28a745, #20c997);
+                    color: white;
+                    padding: 0.8rem 1.5rem;
+                    border: none;
+                    border-radius: 25px;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    cursor: pointer;
+                    transition: all 0.1s ease;
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+                    animation: pulse 2s infinite;
+                }
+
+                .booking-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+                }
+
+                @keyframes pulse {
+                    0% {
+                        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+                    }
+
+                    50% {
+                        box-shadow: 0 4px 20px rgba(40, 167, 69, 0.5);
+                    }
+
+                    100% {
+                        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+                    }
+                }
+
+                /* Modal Styles */
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 2000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(5px);
+                }
+
+                .modal-content {
+                    background-color: var(--white);
+                    margin: 5% auto;
+                    padding: 2rem;
+                    border-radius: 20px;
+                    width: 90%;
+                    max-width: 500px;
+                    position: relative;
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                    animation: modalSlideIn 0.3s ease;
+                }
+
+                @keyframes modalSlideIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-50px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .close {
+                    color: #aaa;
+                    float: left;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 15px;
+                    left: 20px;
+                }
+
+                .close:hover {
+                    color: var(--primary-gold);
+                }
+
+                .modal h2 {
+                    font-family: 'Amiri', serif;
+                    color: var(--text-dark);
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                }
+
+                .contact-options {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                }
+
+                .contact-option {
+                    background: var(--light-bg);
+                    padding: 1rem;
+                    border-radius: 15px;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: all 0.1s ease;
+                    border: 2px solid transparent;
+                    color: #2C2C2C;
+                }
+
+                .contact-option:hover {
+                    background: var(--secondary-gold);
+                    border-color: var(--primary-gold);
+                    transform: translateY(-3px);
+                }
+
+                .contact-option span {
+                    font-size: 2rem;
+                    display: block;
+                    margin-bottom: 0.5rem;
+                }
+
+                .booking-form {
+                    display: grid;
+                    gap: 1rem;
+                }
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .form-group label {
+                    margin-bottom: 0.5rem;
+                    font-weight: 600;
+                    color: var(--text-dark);
+                }
+
+                .form-group input,
+                .form-group select,
+                .form-group textarea {
+                    padding: 0.8rem;
+                    border: 2px solid #e0e0e0;
+                    border-radius: 10px;
+                    font-size: 1rem;
+                    transition: border-color 0.1s ease;
+                    font-family: 'Cairo', sans-serif;
+                }
+
+                .form-group input:focus,
+                .form-group select:focus,
+                .form-group textarea:focus {
+                    outline: none;
+                    border-color: var(--primary-gold);
+                }
+
+                .submit-btn {
+                    background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+                    color: white;
+                    padding: 1rem;
+                    border: none;
+                    border-radius: 10px;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.1s ease;
+                    margin-top: 1rem;
+                }
+
+                .submit-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+                }
+
+                /* Fixed booking button */
+                .fixed-booking {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    z-index: 1500;
+                    display: none;
+                }
+
+                @media (max-width: 768px) {
+                    .fixed-booking {
+                        display: block;
+                    }
+
+                    .modal-content {
+                        margin: 10% auto;
+                        width: 90%;
+                        height: 70%;
+                        padding: 1.5rem;
+                    }
+
+                    .contact-options {
+                        grid-template-columns: 1fr;
+                        color: #2C2C2C;
+                    }
+                }
+            </style>
+
+            <script>
+                // Booking Modal Functions
+                function openBookingModal() {
+                    document.getElementById('bookingModal').style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeBookingModal() {
+                    document.getElementById('bookingModal').style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+
+                function callDirect() {
+                    window.location.href = 'tel:01273665287';
+                }
+
+                function openWhatsApp() {
+                    const message = encodeURIComponent('السلام عليكم، أريد الاستفسار عن خدمات المستشار');
+                    window.open(`https://wa.me/201277776870?text=${message}`, '_blank');
+                }
+          
+
+                // Close modal when clicking outside
+                window.onclick = function (event) {
+                    const modal = document.getElementById('bookingModal');
+                    if (event.target === modal) {
+                        closeBookingModal();
+                    }
+                }
+
+                // Close modal with Escape key
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') {
+                        closeBookingModal();
+                    }
+                });
+
+            </script>
+
+
         </nav>
     </header>
-
     <!-- Main Content -->
     <main class="main-content">
         <!-- Page Header -->
