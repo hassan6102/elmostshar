@@ -176,7 +176,7 @@ function closeBookingModal() {
 }
 
 function callDirect() {
-    window.location.href = 'tel:0127366287';
+    window.location.href = 'tel:01277776870';
 }
 
 function openWhatsApp() {
