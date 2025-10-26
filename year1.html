@@ -1091,9 +1091,83 @@
 
 
 
-<a href="https://drive.google.com/file/d/1AZjEnlqHBzIU_x6Ey5Gx-kDLqS1HGaZl/view?usp=drivesdk" target="_blank" class="map-link" style="margin-bottom: 30px;">
-                    محاضرات الاسبوع الاول
-                </a>
+<!-- ====== Start Lecture Access Section ====== -->
+<div id="lectureBox" style="text-align:center; margin:40px auto;">
+  <h2 style="font-family:Arial; color:#222;">🎓 دخول المحاضرة</h2>
+  <button id="enterLectureBtn" 
+          style="padding:12px 24px; font-size:18px; background:#4CAF50; 
+                 color:white; border:none; border-radius:8px; cursor:pointer; transition:0.3s;">
+    ادخل المحاضرة
+  </button>
+  <p id="statusMsg" style="margin-top:20px; font-size:16px; color:#d00;"></p>
+</div>
+
+<script>
+  // 🟢 رقم أو اسم المحاضرة الحالية
+  const lectureId = "lecture_5"; // 👈 غيّره كل محاضرة (lecture_6, lecture_7 ...)
+
+  // 🟢 لينك المحاضرة
+  const meetingLink = "https://drive.google.com/file/d/1AZjEnlqHBzIU_x6Ey5Gx-kDLqS1HGaZl/view?userstoinvite=abdelkhalkfatma@gmail.com&sharingaction=manageaccess&role=writer&ts=68f4d28d&pli=11";
+
+  // 🟢 الأكواد المسموح بيها
+  const validCodes = ["HASSAN001", "HASSAN002", "HASSAN003", "HASSAN004"];
+
+  // 🟠 الأكواد المستخدمة (كلها)
+  const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || {};
+
+  // 🟢 تعريف الجهاز
+  let deviceId = localStorage.getItem("deviceId");
+  if (!deviceId) {
+    deviceId = Math.random().toString(36).substr(2, 9);
+    localStorage.setItem("deviceId", deviceId);
+  }
+
+  const btn = document.getElementById("enterLectureBtn");
+  const msg = document.getElementById("statusMsg");
+
+  // ✅ لو الجهاز ده دخل المحاضرة الحالية قبل كده → يفتح تلقائيًا
+  const enteredBefore = localStorage.getItem("enteredLectureId");
+  if (enteredBefore === lectureId) {
+    msg.textContent = "✅ تم دخولك مسبقًا للمحاضرة. سيتم فتحها الآن...";
+    msg.style.color = "#080";
+    setTimeout(() => {
+      window.open(meetingLink, "_blank");
+    }, 1000);
+  }
+
+  // 📥 عند الضغط على الزر
+  btn.onclick = function () {
+    const code = prompt("🎟️ من فضلك أدخل كود الدخول للمحاضرة:");
+    if (!code) return;
+
+    // تحقق من الكود
+    if (!validCodes.includes(code)) {
+      msg.textContent = "❌ الكود غير صحيح!";
+      msg.style.color = "#d00";
+      return;
+    }
+
+    // تحقق إذا الكود مستخدم من جهاز آخر
+    if (usedCodes[code] && usedCodes[code] !== deviceId) {
+      msg.textContent = "⚠️ هذا الكود تم استخدامه بالفعل من جهاز آخر!";
+      msg.style.color = "#d00";
+      return;
+    }
+
+    // ✅ تسجيل الاستخدام للجهاز ده
+    usedCodes[code] = deviceId;
+    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+    localStorage.setItem("enteredLectureId", lectureId);
+
+    msg.textContent = "✅ تم التحقق من الكود! سيتم فتح المحاضرة الآن...";
+    msg.style.color = "#080";
+
+    setTimeout(() => {
+      window.open(meetingLink, "_blank");
+    }, 1000);
+  };
+</script>
+<!-- ====== End Lecture Access Section ====== -->
             
 
             <!-- Subjects Section -->
