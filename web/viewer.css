@@ -29,6 +29,10 @@
 #toolbarViewerRight, #secondaryToolbar {
   display: none !important;
 }
+}
+#toolbarViewerRight, #secondaryToolbar {
+  display: none !important;
+}
 
 @supports (color: light-dark(red, red)) and (color: rgb(0 0 0 / 0)){
 .messageBar{
