@@ -13,7 +13,36 @@
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
         rel="stylesheet">
 
+    // check if he enter in unusual way
+    <script>
+        // Activation Key Protection
+        // Check if user has valid activation key before allowing access to this page
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
 
+        // Check for valid activation key cookie
+        const pdfId = 'midterm_notes00';
+        const cookieName = 'pdf_' + pdfId.replace(/\s+/g, '_') + '_key';
+        const storedKey = getCookie(cookieName);
+
+        // If no valid key found, redirect to activation page
+        if (!storedKey) {
+            console.log("No activation key found. Redirecting to activation page...");
+            const courseValue = '30';
+            const targetUrl = 'gate.html';
+            window.location.href = 'activation-code/activation-key.html?course=' + courseValue + '&pdf_id=' + encodeURIComponent(pdfId) + '&targetUrl=' + encodeURIComponent(targetUrl);
+        } else {
+            console.log("Valid activation key found. Access granted.");
+        }
+    </script>
 </head>
 
 <body>
@@ -51,93 +80,93 @@
 
 
 
-                        
-<button class="deblom" onclick="openQanon()">
-     قانون جنائى
-</button>
 
-<script>
-    function openQanon() {
-        window.open('view_qanon_genaay.html', '_blank');
-    }
-</script>
+                        <button class="deblom" onclick="openQanon()">
+                            قانون جنائى
+                        </button>
 
-
-
-
-
-<button class="deblom" onclick="openDawly()">
-       الدولي الخاص 
-</button>
-
-<script>
-    function openDawly() {
-        window.open('view_midterm_dawly.html', '_blank');
-    }
-</script>
+                        <script>
+                            function openQanon() {
+                                window.open('view_qanon_genaay.html', '_blank');
+                            }
+                        </script>
 
 
 
 
-<button class="deblom" onclick="openCurriculum()">
-     مناهج  البحث 
-</button>
 
-<script>
-    function openCurriculum() {
-        window.open('view_midterm_curriculum.html', '_blank');
-    }
-</script>
+                        <button class="deblom" onclick="openDawly()">
+                            الدولي الخاص
+                        </button>
 
-
-
-<button class="deblom" onclick="openAdari()">
-     قضاء إداري  
-</button>
-
-<script>
-    function openAdari() {
-        window.open('view_midterm_adari.html', '_blank');
-    }
-</script>
+                        <script>
+                            function openDawly() {
+                                window.open('view_midterm_dawly.html', '_blank');
+                            }
+                        </script>
 
 
 
 
-<button class="deblom" onclick="openTijari()">
-     قانون تجاري  
-</button>
+                        <button class="deblom" onclick="openCurriculum()">
+                            مناهج البحث
+                        </button>
 
-<script>
-    function openTijari() {
-        window.open('view_midterm_tijari.html', '_blank');
-    }
-</script>
-
-
-
-
-<button class="deblom" onclick="openMorafaat()">
-     قانون مرافعات  
-</button>
-
-<script>
-    function openMorafaat() {
-        window.open('view_midterm_morafaat.html', '_blank');
-    }
-</script>
+                        <script>
+                            function openCurriculum() {
+                                window.open('view_midterm_curriculum.html', '_blank');
+                            }
+                        </script>
 
 
 
-<button class="deblom" onclick="openMadani()">
-     القانون المدني  
-</button>
+                        <button class="deblom" onclick="openAdari()">
+                            قضاء إداري
+                        </button>
 
-<script>
-    function openMadani() {
-        window.open('view_midterm_madani.html', '_blank');
-    }
-</script>
+                        <script>
+                            function openAdari() {
+                                window.open('view_midterm_adari.html', '_blank');
+                            }
+                        </script>
+
+
+
+
+                        <button class="deblom" onclick="openTijari()">
+                            قانون تجاري
+                        </button>
+
+                        <script>
+                            function openTijari() {
+                                window.open('view_midterm_tijari.html', '_blank');
+                            }
+                        </script>
+
+
+
+
+                        <button class="deblom" onclick="openMorafaat()">
+                            قانون مرافعات
+                        </button>
+
+                        <script>
+                            function openMorafaat() {
+                                window.open('view_midterm_morafaat.html', '_blank');
+                            }
+                        </script>
+
+
+
+                        <button class="deblom" onclick="openMadani()">
+                            القانون المدني
+                        </button>
+
+                        <script>
+                            function openMadani() {
+                                window.open('view_midterm_madani.html', '_blank');
+                            }
+                        </script>
 
                     </div>
                 </div>
