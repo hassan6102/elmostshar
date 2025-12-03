@@ -12,8 +12,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
         rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -23,7 +21,6 @@
             <div class="logo">المستشار</div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
-
             </ul>
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <button class="booking-btn" onclick="openBookingModal()">
@@ -34,8 +31,6 @@
         </nav>
     </header>
 
-
-
     <!-- Stages Section -->
     <section class="stages" id="stages">
         <div class="container">
@@ -43,26 +38,16 @@
             <h2 class="section-title loading"> اختر الترم</h2>
             <p class="section-subtitle loading">اختر ترمك الدراسي لمعرفة المواد والخدمات المتاحة</p>
 
-
-            <!-- Stages Section -->
             <section class="stages" id="stages">
                 <div class="container">
-
                     <div class="stages-grid">
-
-
-
-                        <button class="deblom" onclick="window.location.href='yearE3.html'">الترم الاول</button>
-                        <button class="deblom" onclick="window.location.href=''">الترم التانى 
-                            </button>
-
+                        <button class="deblom" onclick="window.location.href='year3.html'">الترم الاول</button>
+                        <button class="deblom" onclick="window.location.href=''">الترم التانى</button>
                     </div>
                 </div>
             </section>
         </div>
     </section>
-
-
 
     <!-- Promo Section -->
     <section class="promo" id="promo">
@@ -75,6 +60,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Test Button -->
+    <div class="container">
+        <button class="deblom" onclick="openView2(30, 'kanon3am','yearE1.html')">
+            تفعيل الدورة
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" id="contact">
@@ -132,5 +124,36 @@
 
     <script src="main.js"></script>
 </body>
+<script>
+    // Cookie helper functions
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function openView2(courseValue, pdf_id, targetUrl = 'activation-code/view-pdf.html') {
+        console.log("Opening view with courseValue:", courseValue, "pdf_id:", pdf_id, "targetUrl:", targetUrl);
+
+        // Check if cookie exists for this pdf_id
+        const cookieName = 'pdf_' + pdf_id.replace(/\s+/g, '_') + '_key';
+        const storedKey = getCookie(cookieName);
+
+        if (storedKey) {
+            // Cookie exists - redirect directly to target URL
+            console.log("Cookie found for pdf_id:", pdf_id, "- Redirecting to", targetUrl);
+            window.open(targetUrl + '?pdf_id=' + encodeURIComponent(pdf_id) + '&course=' + courseValue, '_blank');
+        } else {
+            // No cookie - redirect to activation page with target URL
+            console.log("No cookie found for pdf_id:", pdf_id, "- Redirecting to activation-key.html");
+            window.open('activation-code/activation-key.html?course=' + courseValue + '&pdf_id=' + encodeURIComponent(pdf_id) + '&targetUrl=' + encodeURIComponent(targetUrl), '_blank');
+        }
+    }
+</script>
 
 </html>

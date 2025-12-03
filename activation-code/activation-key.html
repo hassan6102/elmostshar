@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفعيل كود التنشيط - المستشار</title>
+    <meta name="description"
+        content="المستشار - سنتر ومكتبة قانونية في بنها، خبرة أكثر من 20 سنة في خدمات طلاب كلية الحقوق">
+    <link rel="stylesheet" href="../style.css">
+    <!-- Google Fonts for Arabic -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .activation-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .activation-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem 2rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .activation-card h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .activation-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .activation-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .verify-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .verify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .verify-btn:active {
+            transform: translateY(0);
+        }
+
+        .verify-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #status {
+            margin-top: 1.5rem;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .status-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .activation-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .activation-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">المستشار</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html">الرئيسية</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="booking-btn" onclick="openBookingModal()">
+                    📞 الحجز والتواصل
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Activation Section -->
+    <section class="activation-section">
+        <div class="activation-card">
+            <h2>🔐 تفعيل كود التنشيط</h2>
+            <p>أدخل كود التنشيط الخاص بك للوصول إلى المحتوى</p>
+
+            <form class="activation-form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="keyInput">كود التنشيط</label>
+                    <input type="text" id="keyInput" placeholder="أدخل كود التنشيط" autocomplete="off" required />
+                </div>
+
+                <button type="submit" class="verify-btn" onclick="verifyActivationKey()">
+                    تفعيل الآن
+                </button>
+
+                <div id="status"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <h3>تواصل معنا</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>بنها - مصر</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>011257741855</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>يومياً من 9 صباحاً - 9 مساءً</span>
+                </div>
+            </div>
+            <button class="booking-btn" onclick="openBookingModal()" style="margin: 1rem 0;">
+                📱 الحجز والتواصل
+            </button>
+            <div class="copyright">
+                <p>&copy; 2024 المستشار - المكتبة القانونية. جميع الحقوق محفوظة.</p>
+                <p>خبرة تتجاوز 20 عاماً في خدمة طلاب كلية الحقوق</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Booking Button for Mobile -->
+    <div class="fixed-booking">
+        <button class="booking-btn" onclick="openBookingModal()">
+            📞 الحجز والتواصل
+        </button>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>طرق التواصل</h2>
+
+            <div class="contact-options">
+                <div class="contact-option" onclick="callDirect()">
+                    <span>📞</span>
+                    <div>اتصال مباشر</div>
+                </div>
+                <div class="contact-option" onclick="openWhatsApp()">
+                    <span>💬</span>
+                    <div>واتساب</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+    <script type="module" src="script-key.js"></script>
+</body>
+
+</html>
