@@ -959,9 +959,11 @@
                 </button>
             </div>
 
-<a href="gate.html" class="back-btn" style="width: 350px; font-size: 35px;  margin-top:10px ">
-                ←مذكرات الميدترم   
-            </a>
+            <button onclick="openView2('30', 'midterm_notes00', 'gate.html')" class="back-btn"
+                style="width: 350px; font-size: 35px; cursor: pointer; border: none;">
+                ←مذكرات الميدترم
+            </button>
+
             
             <!-- Center Info Section -->
             <section class="section">
@@ -1373,4 +1375,37 @@
         }
     </script>
 </body>
+
+<script>
+    // Cookie helper functions
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function openView2(courseValue, pdf_id, targetUrl = 'activation-code/view-pdf.html') {
+        console.log("Opening view with courseValue:", courseValue, "pdf_id:", pdf_id, "targetUrl:", targetUrl);
+
+        // Check if cookie exists for this pdf_id
+        const cookieName = 'pdf_' + pdf_id.replace(/\s+/g, '_') + '_key';
+        const storedKey = getCookie(cookieName);
+
+        if (storedKey) {
+            // Cookie exists - redirect directly to target URL
+            console.log("Cookie found for pdf_id:", pdf_id, "- Redirecting to", targetUrl);
+            window.open(targetUrl + '?pdf_id=' + encodeURIComponent(pdf_id) + '&course=' + courseValue, '_blank');
+        } else {
+            // No cookie - redirect to activation page with target URL
+            console.log("No cookie found for pdf_id:", pdf_id, "- Redirecting to activation-key.html");
+            window.open('activation-code/activation-key.html?course=' + courseValue + '&pdf_id=' + encodeURIComponent(pdf_id) + '&targetUrl=' + encodeURIComponent(targetUrl), '_blank');
+        }
+    }
+</script>
+
 </html>
