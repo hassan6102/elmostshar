@@ -13,7 +13,7 @@ function getCookie(name) {
 }
 
 // Check for valid activation key cookie
-const pdfId = 'midterm_notes00';
+const pdfId = 'final_1';
 const cookieName = 'pdf_' + pdfId.replace(/\s+/g, '_') + '_key';
 const storedKey = getCookie(cookieName);
 
