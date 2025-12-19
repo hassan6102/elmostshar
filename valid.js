@@ -13,7 +13,7 @@ function getCookie(name) {
 }
 
 // Check for valid activation key cookie
-const pdfId = 'midterm_notes00';
+const pdfId = 'final_1';
 const cookieName = 'pdf_' + pdfId.replace(/\s+/g, '_') + '_key';
 const storedKey = getCookie(cookieName);
 
@@ -21,7 +21,7 @@ const storedKey = getCookie(cookieName);
 if (!storedKey) {
     console.log("No activation key found. Redirecting to activation page...");
     const courseValue = '30';
-    const targetUrl = 'gate.html';
+    const targetUrl = 'final1.html';
     window.location.href = 'activation-code/activation-key.html?course=' + courseValue + '&pdf_id=' + encodeURIComponent(pdfId) + '&targetUrl=' + encodeURIComponent(targetUrl);
 } else {
     console.log("Valid activation key found. Access granted.");
