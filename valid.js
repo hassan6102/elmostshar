@@ -1,42 +1,28 @@
+// check if he enter in unusual way
+// Activation Key Protection
+// Check if user has valid activation key before allowing access to this page
 function getCookie(name) {
     const nameEQ = name + "=";
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
-        let c = ca[i].trim();
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
 
-// تحديد الصفحة الحالية
-const currentPage = window.location.pathname.split("/").pop(); // final1.html أو final2.html
+// Check for valid activation key cookie
+const pdfId = 'midterm_notes00';
+const cookieName = 'pdf_' + pdfId.replace(/\s+/g, '_') + '_key';
+const storedKey = getCookie(cookieName);
 
-// إعداد pdfId و targetUrl حسب الصفحة
-let pdfId = '';
-let targetUrl = currentPage;
-let courseValue = '30'; // ممكن تغييره لو كل مادة كورس مختلف
-
-if (currentPage === 'final1.html') {
-    pdfId = 'final_1';
-} else if (currentPage === 'final2.html') {
-    pdfId = 'final_2';
+// If no valid key found, redirect to activation page
+if (!storedKey) {
+    console.log("No activation key found. Redirecting to activation page...");
+    const courseValue = '30';
+    const targetUrl = 'final1.html';
+    window.location.href = 'activation-code/activation-key.html?course=' + courseValue + '&pdf_id=' + encodeURIComponent(pdfId) + '&targetUrl=' + encodeURIComponent(targetUrl);
 } else {
-    console.log("صفحة غير معروفة، الكود لن يعمل.");
+    console.log("Valid activation key found. Access granted.");
 }
-
-// التحقق من الكوكيز
-if (pdfId) {
-    const cookieName = 'pdf_' + pdfId.replace(/\s+/g, '_') + '_key';
-    const storedKey = getCookie(cookieName);
-
-    if (!storedKey) {
-        console.log("No activation key found. Redirecting...");
-        window.location.href = 'activation-code/activation-key.html?course=' 
-            + courseValue 
-            + '&pdf_id=' + encodeURIComponent(pdfId) 
-            + '&targetUrl=' + encodeURIComponent(targetUrl);
-    } else {
-        console.log("Valid activation key found for " + pdfId + ". Access granted.");
-    }
-}
-
