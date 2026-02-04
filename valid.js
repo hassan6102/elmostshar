@@ -16,13 +16,9 @@ let pdfId = '';
 let targetUrl = currentPage;
 let courseValue = '30'; // ممكن تغييره لو كل مادة كورس مختلف
 
-if (currentPage === 'final1.html') {
-    pdfId = 'final_1';
-} else if (currentPage === 'final2.html') {
-    pdfId = 'final_2';
-} else {
-    console.log("صفحة غير معروفة، الكود لن يعمل.");
-}
+if (currentPage === 'term_2.html') {
+    pdfId = 'term_2';
+} 
 
 // التحقق من الكوكيز
 if (pdfId) {
