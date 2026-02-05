@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المستشار - المكتبة القانونية | بنها</title>
+    <meta name="description"
+        content="المستشار - سنتر ومكتبة قانونية في بنها، خبرة أكثر من 20 سنة في خدمات طلاب كلية الحقوق">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Arabic -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">المستشار</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="booking-btn" onclick="openBookingModal()">
+                    📞 الحجز والتواصل
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Stages Section -->
+    <section class="stages" id="stages">
+        <div class="container">
+            <h2 class="section-title loading"> الدراسية</h2>
+            <h2 class="section-title loading"> اختر هيئتك القضائيه</h2>
+
+
+            <!-- Stages Section -->
+            <section class="stages" id="stages">
+                <div class="container">
+
+                    <div class="stages-grid">
+
+
+
+
+
+                        <!-- زرار نيابة -->
+
+                        <!-- زرار قضاء -->
+                        <button class="deblom" style="background-color: rgb(29, 94, 235); color:#fff;"
+                            onclick="openKadaae()">
+                            أسئله مقابلات هيئه قضايا الدوله
+                        </button>
+
+
+                        <script>
+
+                            function openKadaae() {
+                                window.open('view_kadaae.html', '_blank');
+                            }
+
+                        </script>
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- <button class="deblom" onclick="window.location.href='allyear.html'"> أسئله مقابلات النيابه
+                            الاداريه</button>
+                        <button class="deblom" onclick="window.location.href='allyear.html'"> أسئله مقابلات مجلس
+                            الدوله</button>
+                        <button class="deblom" onclick="window.location.href='allyear2.html'"> أسئله مقابلات هيئه قضايا
+                            الدوله
+                        </button> -->
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+
+    <!-- Promo Section -->
+    <section class="promo" id="promo">
+        <div class="container">
+            <div class="promo-content">
+                <h2 class="loading">🎁 عرض خاص لطلابنا</h2>
+                <p class="loading">استخدم كود الخصم للحصول على خصم خاص على جميع خدماتنا</p>
+                <div class="promo-code loading">ELMOSTASHAR</div>
+                <p class="loading">اذكر الكود عند الدفع واحصل على خصم مميز!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <h3>تواصل معنا</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>بنها -
+                        برج سما (1) امام البوابه الاولى لكليه الحقوق (الاداره والسنتر)</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span> بنها - اخر سور كليه الحقوق (المكتبه)</span>
+                </div>
+                <a href="https://maps.app.goo.gl/YB4XuCGAadWpcDbh7" target="_blank" class="map-link">
+                    📍 موقعنا على الخريطة
+                </a>
+
+                <style>
+                    .map-link {
+                        display: inline-block;
+                        background: linear-gradient(135deg, #a5c07c, #a4a286);
+                        color: #fff;
+                        padding: 10px 15px;
+                        border-radius: 30px;
+                        font-size: 15px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        transition: 0.3s;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .map-link:hover {
+                        background: linear-gradient(135deg, #eff7b0, #f8ff1f);
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                        color: #000000;
+
+                    }
+                </style>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>01277776870</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>01273665287</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>01021404059 (تقييم الخدمه)</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>يومياً من 9 صباحاً - 4 مساءً</span>
+                </div>
+            </div>
+            <button class="booking-btn" onclick="openBookingModal()" style="margin: 1rem 0;">
+                📱 الحجز والتواصل
+            </button>
+            <div class="copyright">
+                <p>&copy; 2025-2026 المستشار - المكتبة القانونية. جميع الحقوق محفوظة.</p>
+                <p>خبرة تتجاوز 20 عاماً في خدمة طلاب كلية الحقوق</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Booking Button for Mobile -->
+    <div class="fixed-booking">
+        <button class="booking-btn" onclick="openBookingModal()">
+            📞 الحجز والتواصل
+        </button>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>طرق التواصل</h2>
+
+            <div class="contact-options">
+                <div class="contact-option" onclick="callDirect()">
+                    <span>📞</span>
+                    <div>اتصال مباشر</div>
+                </div>
+                <div class="contact-option" onclick="openWhatsApp()">
+                    <span>💬</span>
+                    <div>واتساب</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+// check if he enter in unusual way
+<script>
+    // Activation Key Protection
+    // Check if user has valid activation key before allowing access to this page
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Check for valid activation key cookie
+    const pdfId = 'term_2';
+    const cookieName = 'pdf_' + pdfId.replace(/\s+/g, '_') + '_key';
+    const storedKey = getCookie(cookieName);
+
+    // If no valid key found, redirect to activation page
+    if (!storedKey) {
+        console.log("No activation key found. Redirecting to activation page...");
+        const courseValue = '30';
+        const targetUrl = 'termH.html';
+        window.location.href = 'activation-code/activation-key.html?course=' + courseValue + '&pdf_id=' + encodeURIComponent(pdfId) + '&targetUrl=' + encodeURIComponent(targetUrl);
+    } else {
+        console.log("Valid activation key found. Access granted.");
+    }
+</script>
+
+
+</html>
