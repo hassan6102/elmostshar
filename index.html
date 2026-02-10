@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ غيّر الرابط ده -->
-  <meta http-equiv="refresh" content="3;url=https://el-mostashar.github.io/
-" />
+  <!-- التحويل التلقائي -->
+  <meta http-equiv="refresh" content="3;url=https://el-mostashar.github.io/" />
 
   <title>تم نقل الموقع</title>
 
@@ -72,7 +71,6 @@
     h1{
       margin:8px 0 10px;
       font-size:28px;
-      letter-spacing:.2px;
     }
 
     p{
@@ -100,25 +98,16 @@
       font-weight:700;
       text-decoration:none;
       color:white;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition: transform .15s ease, filter .15s ease;
-      user-select:none;
-      will-change: transform;
+      transition:.15s;
     }
-
-    .btn:hover{ transform: translateY(-2px); filter: brightness(1.06); }
 
     .primary{
       background: linear-gradient(90deg, var(--btn1), var(--btn2));
-      box-shadow: 0 12px 30px rgba(124,58,237,.25);
     }
 
     .secondary{
       background:#ffffff10;
       border:1px solid var(--border);
-      color:#e5e7eb;
     }
 
     .count{
@@ -129,32 +118,23 @@
 
     .progress{
       height:10px;
-      width:min(420px, 100%);
+      width:420px;
+      max-width:100%;
       margin:12px auto 0;
       border-radius:999px;
       border:1px solid var(--border);
-      background:#ffffff0a;
       overflow:hidden;
-      position:relative;
     }
 
     .bar{
       height:100%;
-      width:0%;
       background: linear-gradient(90deg, var(--btn1), var(--btn2));
-      border-radius:999px;
       animation: fill 3s linear forwards;
     }
 
     @keyframes fill{
-      to{ width:100% }
-    }
-
-    .small{
-      margin-top:18px;
-      color:#9ca3af;
-      font-size:13px;
-      line-height:1.7;
+      from{width:0}
+      to{width:100%}
     }
   </style>
 </head>
@@ -165,15 +145,12 @@
 
     <h1>الموقع اتنقل 🎉</h1>
     <p>
-      سيتم تحويلك تلقائيًا إلى الموقع الجديد خلال <b id="sec">3</b> ثواني.
-      لو التحويل ما اشتغلش، اضغط الزرار تحت.
+      سيتم تحويلك تلقائيًا إلى الموقع الجديد خلال
+      <b id="sec">3</b> ثواني
     </p>
 
     <div class="actions">
-      <!-- ✅ غيّر الرابط ده -->
-      <a class="btn primary" id="goBtn" href="https://el-mostashar.github.io/
-">اذهب للموقع الجديد</a>
-
+      <a class="btn primary" id="goBtn" href="https://el-mostashar.github.io/">اذهب للموقع الجديد</a>
       <a class="btn secondary" href="#" onclick="location.reload()">إعادة المحاولة</a>
     </div>
 
@@ -181,31 +158,20 @@
       جاري التحويل…
       <div class="progress"><div class="bar"></div></div>
     </div>
-
-    <div class="small">
-      لو حفظت اللينك القديم، حدّثه باللينك الجديد عشان تدخل أسرع.
-    </div>
   </main>
 
- <script>
-  const NEW_URL = "https://el-mostashar.github.io/";
+  <script>
+    const NEW_URL = "https://el-mostashar.github.io/";
+    let s = 3;
+    const el = document.getElementById("sec");
 
-  // تحديث الرابط بتاع الزرار
-  document.getElementById("goBtn").href = NEW_URL;
-
-  // عدّاد + تحويل تلقائي
-  let s = 3;
-  const el = document.getElementById("sec");
-
-  const timer = setInterval(() => {
-    s--;
-    el.textContent = s;
-    if (s <= 0) {
-      clearInterval(timer);
-      window.location.href = NEW_URL;
-    }
-  }, 1000);
-</script>
+    setInterval(() => {
+      s--;
+      el.textContent = s;
+      if (s <= 0) window.location.href = NEW_URL;
+    }, 1000);
+  </script>
 </body>
 </html>
+
 
