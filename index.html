@@ -187,25 +187,25 @@
     </div>
   </main>
 
-  <script>
-    // ✅ غيّر الرابط ده
-    const NEW_URL = "https://el-mostashar.github.io/
-";
+ <script>
+  const NEW_URL = "https://el-mostashar.github.io/";
 
-    // تحديث الروابط تلقائيًا
-    document.getElementById("goBtn").href = NEW_URL;
+  // تحديث الرابط بتاع الزرار
+  document.getElementById("goBtn").href = NEW_URL;
 
-    // عدّاد بسيط + تحويل
-    let s = 3;
-    const el = document.getElementById("sec");
-    const timer = setInterval(() => {
-      s--;
-      el.textContent = s;
-      if (s <= 0) {
-        clearInterval(timer);
-        window.location.href = NEW_URL;
-      }
-    }, 1000);
-  </script>
+  // عدّاد + تحويل تلقائي
+  let s = 3;
+  const el = document.getElementById("sec");
+
+  const timer = setInterval(() => {
+    s--;
+    el.textContent = s;
+    if (s <= 0) {
+      clearInterval(timer);
+      window.location.href = NEW_URL;
+    }
+  }, 1000);
+</script>
 </body>
 </html>
+
