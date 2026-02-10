@@ -1,372 +1,208 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المستشار - المكتبة القانونية | بنها</title>
-    <meta name="description"
-        content="المستشار - سنتر ومكتبة قانونية في بنها، خبرة أكثر من 20 سنة في خدمات طلاب كلية الحقوق">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for Arabic -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="icon" type="image/png" href="/favicon.png">
+  <!-- ✅ غيّر الرابط ده -->
+  <meta http-equiv="refresh" content="3;url=NEW_URL" />
 
-    
- <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>تم نقل الموقع</title>
 
-    <!-- Bootstrap Bundle (فيه الـ JS + Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#111827;
+      --card:#0b1220cc;
+      --border:#ffffff1a;
+      --text:#e5e7eb;
+      --muted:#a3a3a3;
+      --btn1:#7c3aed;
+      --btn2:#06b6d4;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
 
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 20%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(800px 500px at 80% 30%, rgba(6,182,212,.25), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      padding:24px;
+    }
 
+    .card{
+      width:min(720px, 100%);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:34px 26px;
+      text-align:center;
+      backdrop-filter: blur(10px);
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#ffffff0d;
+      font-size:14px;
+      color:#d1d5db;
+      margin-bottom:14px;
+    }
+
+    .badge span{
+      width:10px;height:10px;border-radius:50%;
+      background:linear-gradient(90deg,var(--btn1),var(--btn2));
+      display:inline-block;
+    }
+
+    h1{
+      margin:8px 0 10px;
+      font-size:28px;
+      letter-spacing:.2px;
+    }
+
+    p{
+      margin:0 auto 18px;
+      max-width:520px;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:16px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      border:0;
+      cursor:pointer;
+      padding:12px 16px;
+      border-radius:14px;
+      font-size:16px;
+      font-weight:700;
+      text-decoration:none;
+      color:white;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition: transform .15s ease, filter .15s ease;
+      user-select:none;
+      will-change: transform;
+    }
+
+    .btn:hover{ transform: translateY(-2px); filter: brightness(1.06); }
+
+    .primary{
+      background: linear-gradient(90deg, var(--btn1), var(--btn2));
+      box-shadow: 0 12px 30px rgba(124,58,237,.25);
+    }
+
+    .secondary{
+      background:#ffffff10;
+      border:1px solid var(--border);
+      color:#e5e7eb;
+    }
+
+    .count{
+      margin-top:16px;
+      font-size:14px;
+      color:#cbd5e1;
+    }
+
+    .progress{
+      height:10px;
+      width:min(420px, 100%);
+      margin:12px auto 0;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#ffffff0a;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .bar{
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, var(--btn1), var(--btn2));
+      border-radius:999px;
+      animation: fill 3s linear forwards;
+    }
+
+    @keyframes fill{
+      to{ width:100% }
+    }
+
+    .small{
+      margin-top:18px;
+      color:#9ca3af;
+      font-size:13px;
+      line-height:1.7;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav-container">
-            <div class="logo">المستشار</div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#stages">المراحل الدراسيه</a></li>
-                <li><a href="#teachers">اساتذه السنتر</a></li>
-                <li><a href="#promo">العروض</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <button class="booking-btn" onclick="openBookingModal()">
-                    📞 الحجز والتواصل
-                </button>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
-            </div>
-        </nav>
-    </header>
+  <main class="card">
+    <div class="badge"><span></span> تم نقل الموقع إلى عنوان جديد</div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="loading">المستشار</h1>
-            <p class="hero-subtitle loading">وجهتك الاولى للدعم القانونى والاكاديمى
-            </p>
-            <p class="hero-subtitle loading">خبره , ثقه , نجاح</p>
+    <h1>الموقع اتنقل 🎉</h1>
+    <p>
+      سيتم تحويلك تلقائيًا إلى الموقع الجديد خلال <b id="sec">3</b> ثواني.
+      لو التحويل ما اشتغلش، اضغط الزرار تحت.
+    </p>
 
-            <div class="hero-stats">
-                <div class="stat-item loading">
-                    <span class="stat-number">20+</span>
-                    <span class="stat-label">سنة خبرة</span>
-                </div>
-                <div class="stat-item loading">
-                    <span class="stat-number">99999+</span>
-                    <span class="stat-label">طالب تخرج</span>
-                </div>
-                <div class="stat-item loading">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">رضا العملاء</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="actions">
+      <!-- ✅ غيّر الرابط ده -->
+      <a class="btn primary" id="goBtn" href="NEW_URL">اذهب للموقع الجديد</a>
 
-    <!-- Services Section -->
-    
-
-    <!-- Stages Section -->
-   <!-- Stages Section -->
-    <section class="stages" id="stages">
-        <div class="container">
-            <h2 class="section-title loading" style="margin-top: 20px;">المراحل الدراسية</h2>
-            <p class="section-subtitle loading">اختر سنتك الدراسية لمعرفة المواد والخدمات المتاحة</p>
-
-            <div class="stages-grid">
-
-
-                <button class="deblom" style="background-color: rgb(79, 255, 73);"  onclick="window.location.href='term.html'">التعليم العادى</button>
-
-                <button class="deblom" onclick="window.location.href='termD.html'">الدبلومات</button>
-
-               
-            </div>
-        </div>
-    </section>
-   <!-- Stages Section -->
-    <section class="stages" id="stages">
-        <div class="container">
-            <h2 class="section-title loading" style="margin-top: 20px;"> الهيئات القضائيه</h2>
-            <p class="section-subtitle loading">اختر هيئتك القضائيه</p>
-
-            <div class="stages-grid">
-
-                <button class="deblom" style="background-color: rgb(202, 126, 238);" onclick="window.location.href='termHedare.html'">  اسئله مقابلات النيابه الاداريه</button>
-
-                <button class="deblom" style="background-color: rgb(202, 126, 238);" onclick="window.location.href='termHkadaae.html'"> اسئله هيئه قضايا الدوله</button>
-
-                <button class="deblom" style="background-color: rgb(202, 126, 238);" onclick="window.location.href='termHmagles.html'"> اسئله مقابلات مجلس الدوله</button>
-
-                <button class="deblom" style="background-color: rgb(202, 126, 238);" onclick="window.location.href='termHneyaba.html'"> اسئله مقابلات النيابه العامه</button>
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Stages Section -->
-    <section class="stages" id="stages">
-        <div class="container">
-            <h2 class="section-title loading" style="margin-top: 20px;"> جمييع اللينكات الخاصه بطلاب حقوق</h2>
-
-            <div class="stages-grid">
-
-
-                <button class="deblom" style="background-color: rgb(71, 213, 248);" onclick="window.open('https://military.bu.edu.eg')"> التربيه العسكريه </button>
-
-                <button class="deblom" style="background-color: rgb(255, 108, 157);" onclick="window.open('https://cmpl.scu.eg')">  المعادله الفرنسيه</button>
-                <button class="deblom" style="background-color: rgb(248, 106, 106);" onclick="window.open('https://myu.bu.edu.eg', '_blank')">  منصه ابن الهيثم</button>
-                <button class="deblom" style="background-color: rgb(79, 255, 73);" onclick="window.open('https://ebook.bu.edu.eg/', '_blank')">  موقع الكتاب الجامعى</button>
-                <button class="deblom" style="background-color: rgb(71, 213, 248);" onclick="window.open('https://e-payment.bu.edu.eg/')"> التحول الرقمي (خاص بالدراسات العليا )</button>
-            </div>
-        </div>
-    </section>
-
- <!-- Stages Section -->
-    <section class="stages" id="stages" style="margin-top:80px;">
-        <div class="container">
-            <h2 class="section-title loading">جروبات الفرق </h2>
-           
-            <div class="stages-grid">
-                <button class="deblom" style="background-color: rgb(134, 112, 253);" onclick="window.open('https://chat.whatsapp.com/DyyRIrfCrmlExOuYrL2jbh?mode=ems_wa_t', '_blank')"> الفرقه الاولى [واتساب]</button>
-                <button class="deblom" style="background-color: rgb(134, 112, 253);" onclick="window.open('https://www.facebook.com/share/g/1HM4hAT57d/', '_blank')"> الفرقه الاولى [فيسبوك]</button>
-                <button class="deblom" style="background-color: rgb(213, 241, 90);" onclick="window.open('https://chat.whatsapp.com/Bn5EwYlBynlI1vqGswHs5s?mode=ems_copy_t', '_blank')">الفرقه التانيه [واتساب]</button>
-                <button class="deblom" style="background-color: rgb(213, 241, 90);" onclick="window.open('https://www.facebook.com/share/g/1ThJU3j2mc/', '_blank')">الفرقه التانيه [فيسبوك]</button>
-                <button class="deblom" style="background-color: rgb(112, 253, 194);" onclick="window.open('https://chat.whatsapp.com/JSbUDx3RTWt10bQZvdAN5f?mode=ems_copy_t', '_blank')">الفرقه التالته  [واتساب]</button>
-                <button class="deblom" style="background-color: rgb(112, 253, 194);" onclick="window.open('https://www.facebook.com/share/g/1Czn1JxEdz/', '_blank')">الفرقه التالته [فيسبوك]</button>
-                <button class="deblom" style="background-color: rgb(253, 112, 222);" onclick="window.open('https://chat.whatsapp.com/JwflCmfbS5e3hyV7iJsq6f?mode=ems_copy_t', '_blank')">الفرقه الرابعه [واتساب]</button>
-                <button class="deblom" style="background-color: rgb(253, 112, 222);" onclick="window.open('https://www.facebook.com/share/g/1BtzdNvF5V/', '_blank')">الفرقه الرابعه [فيسبوك]</button>
-
-            </div>
-        </div>
-    </section>
-    <section class="stages" id="stages" style="margin-top:80px;">
-        <div class="container">
-            <h2 class="section-title loading">جروبات الدبلومات</h2>
-           
-            <div class="stages-grid">
-                <button class="deblom" style="background-color: rgb(253, 112, 112);" onclick="window.open('https://chat.whatsapp.com/DCuOCTfhyYy60rBqexCNkD?mode=ems_wa_t', '_blank')"> جروب استفسارات الدراسات العليا </button>
-                <button class="deblom" style="background-color: rgb(112, 161, 253);" onclick="window.open('https://chat.whatsapp.com/K2Pe9p42Xca1th9qT2MaFf?mode=ems_wa_t', '_blank')"> دبلوم القانون الخاص</button>
-                <button class="deblom" style="background-color: rgb(253, 227, 112);" onclick="window.open('https://chat.whatsapp.com/JsYLFe15e2rIwopW91zbJI?mode=ems_wa_t', '_blank')"> دبلوم القانون العام</button>
-                <button class="deblom" style="background-color: rgb(197, 112, 253);" onclick="window.open('https://chat.whatsapp.com/H6pO3xcNYXXEa2q72aYRd5?mode=ems_wa_t', '_blank')"> دبلوم القانون الدولى</button>
-                <button class="deblom" style="background-color: rgb(134, 112, 253);" onclick="window.open('https://chat.whatsapp.com/KbpqBUhfuBLJZg0IAz3GH2?mode=ems_wa_t', '_blank')"> دبلوم  العلوم الاقتصاديه</button>
-                <button class="deblom" style="background-color: rgb(112, 190, 253);" onclick="window.open('https://chat.whatsapp.com/ICgOZRfLyqEKZEKtZfwC1n?mode=ems_wa_t', '_blank')"> دبلوم  العلوم الاداريه</button>
-                <button class="deblom" style="background-color: rgb(68, 252, 236);" onclick="window.open('https://chat.whatsapp.com/GKFaJHLFQWV8TyH9fjw4iT?mode=ems_wa_t', '_blank')"> دبلوم  الشريعه الاسلاميه</button>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    
-    <div id="myCarousel" class="carousel slide" style="margin-top: 60px;" data-bs-ride="carousel" data-bs-interval="500">
-        <div class="carousel-inner">
-            <h2 class="section-title loading">خرجيين المستشار</h2>
-            <p class="section-subtitle loading">انضم لينا عشان تبقى ايقونه زى اللى قبلك</p>
-            <div class="carousel-item active">
-                <img src="img/WhatsApp Image 2025-09-20 at 00.58.45_f8a454aa.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-19 at 20.54.34_114aa7fe.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.46.08_89edeca0.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.47.55_9a243470.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.47.56_13f6a34e.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.47.56_7f7a6a48.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.47.57_a0dfcb95.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.48.35_5c9929bf.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.48.45_edb947a8.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 02.46.05_f9d7b330.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="img/WhatsApp Image 2025-09-11 at 15.32.14_beb0ee98.jpg" class="d-block w-100" alt="...">
-            </div>
-            
-        </div>
-
-        <!-- أزرار التنقل -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
+      <a class="btn secondary" href="#" onclick="location.reload()">إعادة المحاولة</a>
     </div>
 
-
-    <!-- Teachers Section -->
-    <section class="teachers" id="teachers">
-        <div class="container">
-            <h2 class="section-title loading">أساتذة السنتر</h2>
-            <p class="section-subtitle loading">نخبة من أفضل الأساتذة والمتخصصين في القانون</p>
-
-            <div class="teachers-grid">
-                <div class="teacher-card loading">
-                    
-                    <p class="teacher-title">أستاذ القانون المدني</p>
-                    <p class="teacher-description">خبرة 25 سنة في تدريس القانون المدني والعقود</p>
-                </div>
-
-                <div class="teacher-card loading">
-                    
-                    <p class="teacher-title">أستاذ القانون الجنائي</p>
-                    <p class="teacher-description">متخصص في القانون الجنائي والإجراءات الجنائية</p>
-                </div>
-
-                <div class="teacher-card loading">
-                   
-                    <p class="teacher-title">أستاذة الشريعه الاسلاميه</p>
-                    <p class="teacher-description">اساتذه خريجى جامعه الازهر</p>
-                </div>
-
-                <div class="teacher-card loading">
-                    
-                    <p class="teacher-title">أستاذ القانون التجاري</p>
-                    <p class="teacher-description">محامي وأستاذ متخصص في القانون التجاري والشركات</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Promo Section -->
-    <section class="promo" id="promo">
-        <div class="container">
-            <div class="promo-content">
-                <h2 class="loading">🎁 عرض خاص لطلابنا</h2>
-                <p class="loading">استخدم كود الخصم للحصول على خصم خاص على جميع خدماتنا</p>
-                <div class="promo-code loading">ELMOSTASHAR1</div>
-                <p class="loading">اذكر الكود عند الدفع واحصل على خصم مميز!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-content">
-            <h3>تواصل معنا</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span >بنها -  
-                          برج سما (1) امام البوابه الاولى لكليه الحقوق (الاداره والسنتر)</span>
-                </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span> بنها - اخر سور كليه الحقوق (المكتبه)</span>
-                </div>
-                <a href="https://maps.app.goo.gl/YB4XuCGAadWpcDbh7" target="_blank" class="map-link">
-                    📍 موقعنا على الخريطة
-                </a>
-
-                <style>
-                    .map-link {
-                        display: inline-block;
-                        background: linear-gradient(135deg, #a5c07c, #a4a286);
-                        color: #fff;
-                        padding: 10px 15px;
-                        border-radius: 30px;
-                        font-size: 15px;
-                        font-weight: bold;
-                        text-decoration: none;
-                        transition: 0.3s;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    }
-
-                    .map-link:hover {
-                        background: linear-gradient(135deg, #eff7b0, #f8ff1f);
-                        transform: translateY(-3px);
-                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-                                                color: #000000;
-
-                    }
-                </style>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <span>01277776870</span>
-                </div>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <span>01273665287</span>
-                </div>
-                <div class="contact-item">
-                    <span>📞</span>
-                    <span>01021404059  (تقييم الخدمه)</span>
-                </div>
-                <div class="contact-item">
-                    <span>⏰</span>
-                    <span>يومياً من 9 صباحاً - 4 مساءً</span>
-                </div>
-                <div class="contact-item"> 
-                    <span>اداره : د . حسن ابو الفتوح -  د. جمال عبد الناصر</span>
-                </div>
-            </div>
-            <button class="booking-btn" onclick="openBookingModal()" style="margin: 1rem 0;">
-                📱 الحجز والتواصل
-            </button>
-           <div class="copyright">
-                <p>&copy; 2025 المستشار - المكتبة القانونية. جميع الحقوق محفوظة.</p>
-                <p>جميع الحقوق محفوظه لدى <a href="https://hassan6102.github.io/portfolio/">Eng .Hassan Mohamed</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Fixed Booking Button for Mobile -->
-    <div class="fixed-booking">
-        <button class="booking-btn" onclick="openBookingModal()">
-            📞 الحجز والتواصل
-        </button>
+    <div class="count">
+      جاري التحويل…
+      <div class="progress"><div class="bar"></div></div>
     </div>
 
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeBookingModal()">&times;</span>
-            <h2>طرق التواصل</h2>
-
-            <div class="contact-options">
-                <div class="contact-option" onclick="callDirect()">
-                    <span>📞</span>
-                    <div>اتصال مباشر</div>
-                </div>
-                <div class="contact-option" onclick="openWhatsApp()">
-                    <span>💬</span>
-                    <div>واتساب</div>
-                </div>
-            </div>
-        </div>
+    <div class="small">
+      لو حفظت اللينك القديم، حدّثه باللينك الجديد عشان تدخل أسرع.
     </div>
+  </main>
 
-    <script src="main.js"></script>
+  <script>
+    // ✅ غيّر الرابط ده
+    const NEW_URL = "NEW_URL";
+
+    // تحديث الروابط تلقائيًا
+    document.getElementById("goBtn").href = NEW_URL;
+
+    // عدّاد بسيط + تحويل
+    let s = 3;
+    const el = document.getElementById("sec");
+    const timer = setInterval(() => {
+      s--;
+      el.textContent = s;
+      if (s <= 0) {
+        clearInterval(timer);
+        window.location.href = NEW_URL;
+      }
+    }, 1000);
+  </script>
 </body>
-
 </html>
